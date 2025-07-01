@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Game SOS 16x16 - Berhadapan</title>
+    <title>Game SOS 10x10 - Berhadapan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,8 +17,9 @@
         .board-container {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(16, 1fr);
-            grid-template-rows: repeat(16, 1fr);
+            /* Mengubah grid menjadi 10x10 */
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
             border: 2px solid #374151; /* gray-700 */
             aspect-ratio: 1 / 1;
             width: 90vw;
@@ -30,7 +31,8 @@
             justify-content: center;
             align-items: center;
             border: 1px solid #d1d5db; /* gray-300 */
-            font-size: clamp(10px, 2.5vw, 16px);
+            /* Memperbesar ukuran font karena sel lebih besar */
+            font-size: clamp(14px, 4vw, 28px);
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.2s;
@@ -148,7 +150,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const BOARD_SIZE = 16;
+            // Mengubah ukuran papan menjadi 10x10
+            const BOARD_SIZE = 10;
             const boardContainer = document.querySelector('.board-container');
             const lineCanvas = document.getElementById('line-canvas');
             const ctx = lineCanvas.getContext('2d');
